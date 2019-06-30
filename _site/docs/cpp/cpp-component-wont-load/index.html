@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>C++ component won't show in Blueprints - UE4 Tutorials</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/ue4/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="http://localhost:4000/ue4/assets/css/just-the-docs.css">
+
+  
+
+  
+    <script type="text/javascript" src="http://localhost:4000/ue4/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="http://localhost:4000/ue4/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>C++ component won’t show in Blueprints | UE4 Tutorials</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="C++ component won’t show in Blueprints" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorials and snippets for UE4" />
+<meta property="og:description" content="Tutorials and snippets for UE4" />
+<link rel="canonical" href="http://localhost:4000/ue4/docs/cpp/cpp-component-wont-load/" />
+<meta property="og:url" content="http://localhost:4000/ue4/docs/cpp/cpp-component-wont-load/" />
+<meta property="og:site_name" content="UE4 Tutorials" />
+<script type="application/ld+json">
+{"description":"Tutorials and snippets for UE4","@type":"WebPage","url":"http://localhost:4000/ue4/docs/cpp/cpp-component-wont-load/","headline":"C++ component won’t show in Blueprints","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="http://localhost:4000/ue4/" class="site-title fs-6 lh-tight">UE4 Tutorials</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav role="navigation" aria-label="Main navigation">
+  <ul class="navigation-list">
+    
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/ue4/" class="navigation-list-link">Home</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/ue4/docs/c++" class="navigation-list-link">C++</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="http://localhost:4000/ue4/docs/cpp/cpp-component-wont-load/" class="navigation-list-link active">C++ component won't show in Blueprints</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      <footer role="contentinfo" class="site-footer">
+        
+      </footer>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0">
+      <div class="page-header">
+        <div class="main-content">
+          
+          <div class="search js-search">
+            <div class="search-input-wrap">
+              <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search UE4 Tutorials" aria-label="Search UE4 Tutorials" autocomplete="off">
+              <svg width="14" height="14" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title><g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"/><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"/></g></svg>
+            </div>
+            <div class="js-search-results search-results-wrap"></div>
+          </div>
+          
+          
+            <ul class="list-style-none text-small mt-md-1 mb-md-1 pb-4 pb-md-0 js-aux-nav aux-nav">
+              
+                <li class="d-inline-block my-0"><a href="https://www.udemy.com/unreal-engine-4-ue4/">Unreal Engine 4 Training Course</a></li>
+              
+            </ul>
+          
+        </div>
+      </div>
+      <div class="main-content">
+        
+          
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb-nav-list">
+                
+                  <li class="breadcrumb-nav-list-item"><a href="http://localhost:4000/ue4/docs/c++">C++</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>C++ component won't show in Blueprints</span></li>
+              </ol>
+            </nav>
+          
+        
+        <div id="main-content" class="page-content" role="main">
+          <h2 id="unreal-engine-components-not-showing-in-blueprint">Unreal Engine Components Not Showing In Blueprint</h2>
+
+<p>So this seems really simple when I write it out, but I lost two hours of my life to this. Basically, I was duplicating Blueprints on a health bar <a href="https://api.unrealengine.com/INT/API/Runtime/UMG/Components/UWidgetComponent/index.html">UWidgetComponent</a> and I knew I needed to move the logic into C++ for code reduction.</p>
+
+<p>I wrote the code, and even got the health bar widget working in the game.  The problem was, inside of the Blueprint Editor, my <code class="highlighter-rouge">UWidgetComponent</code> was nowhere to be found and I couldn’t edit it.  I thought I was going crazy.</p>
+
+<p>The problem was I had the widget code inside of <code class="highlighter-rouge">BeginPlay</code> instead of the constructor.</p>
+
+<p class="label label-red">Don’t do this</p>
+
+<div class="code-example">
+  <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="n">AGameCharacter</span><span class="p">::</span><span class="nf">BeginPlay</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">HealthBarWidget</span> <span class="p">=</span> <span class="n">CreateDefaultSubobject</span><span class="p">&lt;</span><span class="n">UWidgetComponent</span><span class="p">&gt;(</span><span class="k">this</span><span class="p">,</span> <span class="nf">TEXT</span><span class="p">(</span><span class="s">"HealthBarWidget"</span><span class="p">));</span>
+  <span class="n">HealthBarWidget</span><span class="p">-&gt;</span><span class="nf">SetupAttachment</span><span class="p">(</span><span class="n">RootComponent</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+</div>
+
+<p class="label">Instead do this</p>
+
+<div class="code-example">
+  <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AGameCharacter</span><span class="p">::</span><span class="nf">AGameCharacter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">HealthBarWidget</span> <span class="p">=</span> <span class="n">CreateDefaultSubobject</span><span class="p">&lt;</span><span class="n">UWidgetComponent</span><span class="p">&gt;(</span><span class="k">this</span><span class="p">,</span> <span class="nf">TEXT</span><span class="p">(</span><span class="s">"HealthBarWidget"</span><span class="p">));</span>
+  <span class="n">HealthBarWidget</span><span class="p">-&gt;</span><span class="nf">SetupAttachment</span><span class="p">(</span><span class="n">RootComponent</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = /cpp/component-wont-load
+this.page.identifier = cpp-component-wont-load;
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://unreal-engine-tutorials.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
