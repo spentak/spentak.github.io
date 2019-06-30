@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: UE4 Tutorials
 description: Tutorials and snippets for UE4
-baseurl: "/ue4/" # the subpath of your site, e.g. /blog
+
 url: "https://spentak.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty

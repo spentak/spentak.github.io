@@ -3,21 +3,21 @@
     "id": "1",
     "title": "C++ component won't show in Blueprints",
     "content": "Unreal Engine Components Not Showing In Blueprint So this seems really simple when I write it out, but I lost two hours of my life to this. Basically, I was duplicating Blueprints on a health bar UWidgetComponent and I knew I needed to move the logic into C++ for code reduction. I wrote the code, and even got the health bar widget working in the game. The problem was, inside of the Blueprint Editor, my UWidgetComponent was nowhere to be found and I couldn’t edit it. I thought I was going crazy. The problem was I had the widget code inside of BeginPlay instead of the constructor. Don’t do this void AGameCharacter::BeginPlay() { HealthBarWidget = CreateDefaultSubobject&lt;UWidgetComponent&gt;(this, TEXT(&quot;HealthBarWidget&quot;)); HealthBarWidget-&gt;SetupAttachment(RootComponent); } Instead do this AGameCharacter::AGameCharacter() { HealthBarWidget = CreateDefaultSubobject&lt;UWidgetComponent&gt;(this, TEXT(&quot;HealthBarWidget&quot;)); HealthBarWidget-&gt;SetupAttachment(RootComponent); }",
-    "url": "http://localhost:4000/ue4/docs/cpp/cpp-component-wont-load/",
+    "url": "http://localhost:4000/docs/cpp/cpp-component-wont-load/",
     "relUrl": "/docs/cpp/cpp-component-wont-load/"
   },
   "2": {
     "id": "2",
     "title": "C++",
     "content": "",
-    "url": "http://localhost:4000/ue4/docs/c++",
+    "url": "http://localhost:4000/docs/c++",
     "relUrl": "/docs/c++"
   },
   "3": {
     "id": "3",
     "title": "Home",
     "content": "Unreal Engine Tutorials &amp; Code Snippets This blog is focused on simply helping people overcome obstacles with UE4 C++ and UE4 Blueprints. It covers common problems and issues that you might encounter as you create your own Unreal Engine Games. I hope it helps! Unreal Engine 4 Course If you would like a more formal training course, I have one available online with Udemy. Preview Course About the project This website is © 2017-2019 by Mark Wahlbeck. Code of conduct Feel free to use and share any content you find useful on this site!",
-    "url": "http://localhost:4000/ue4/",
+    "url": "http://localhost:4000/",
     "relUrl": "/"
   }
   
