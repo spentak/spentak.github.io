@@ -16,7 +16,7 @@ This blog is focused on simply helping people overcome obstacles with UE4 C++ an
 
 If you would like a more formal training course, I have one available online with Udemy.
 
-[Preview Course](https://www.udemy.com/unreal-engine-4-ue4/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Unreal Training](https://www.udemy.com/unreal-engine-4-ue4/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 

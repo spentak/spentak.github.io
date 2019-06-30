@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  
+    <title>Sharing C++ Code Between Classes - UE4 Tutorials</title>
+
+    
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/just-the-docs.css">
+
+  
+
+  
+    <script type="text/javascript" src="http://localhost:4000/assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="http://localhost:4000/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Sharing C++ Code Between Classes | UE4 Tutorials</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sharing C++ Code Between Classes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorials and snippets for UE4" />
+<meta property="og:description" content="Tutorials and snippets for UE4" />
+<link rel="canonical" href="http://localhost:4000/docs/cpp/sharing-code-between-classes/" />
+<meta property="og:url" content="http://localhost:4000/docs/cpp/sharing-code-between-classes/" />
+<meta property="og:site_name" content="UE4 Tutorials" />
+<script type="application/ld+json">
+{"description":"Tutorials and snippets for UE4","@type":"WebPage","url":"http://localhost:4000/docs/cpp/sharing-code-between-classes/","headline":"Sharing C++ Code Between Classes","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="http://localhost:4000" class="site-title fs-6 lh-tight">UE4 Tutorials</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav role="navigation" aria-label="Main navigation">
+  <ul class="navigation-list">
+    
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="http://localhost:4000/" class="navigation-list-link">Home</a>
+            
+          </li>
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="http://localhost:4000/docs/c++" class="navigation-list-link">C++</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="http://localhost:4000/docs/cpp/cpp-component-wont-load/" class="navigation-list-link">C++ component won't show in Blueprints</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="http://localhost:4000/docs/cpp/sharing-code-between-classes/" class="navigation-list-link active">Sharing C++ Code Between Classes</a>
+                      
+                    </li>
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      <footer role="contentinfo" class="site-footer">
+        
+      </footer>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0">
+      <div class="page-header">
+        <div class="main-content">
+          
+          <div class="search js-search">
+            <div class="search-input-wrap">
+              <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search UE4 Tutorials" aria-label="Search UE4 Tutorials" autocomplete="off">
+              <svg width="14" height="14" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title><g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"/><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"/></g></svg>
+            </div>
+            <div class="js-search-results search-results-wrap"></div>
+          </div>
+          
+          
+            <ul class="list-style-none text-small mt-md-1 mb-md-1 pb-4 pb-md-0 js-aux-nav aux-nav">
+              
+                <li class="d-inline-block my-0"><a href="https://www.udemy.com/unreal-engine-4-ue4/">Unreal Engine 4 Training Course</a></li>
+              
+            </ul>
+          
+        </div>
+      </div>
+      <div class="main-content">
+        
+          
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb-nav-list">
+                
+                  <li class="breadcrumb-nav-list-item"><a href="http://localhost:4000/docs/c++">C++</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>Sharing C++ Code Between Classes</span></li>
+              </ol>
+            </nav>
+          
+        
+        <div id="main-content" class="page-content" role="main">
+          <h2 id="how-to-share-c-code-among-unrelated-unreal-engine-classes">How To Share C++ Code Among Unrelated Unreal Engine Classes</h2>
+
+<p>I use Blueprint as much as I can. When I need to re-use code or need inheritance, that is when I move things to C++. It’s just better than working with parent/child blueprints.</p>
+
+<p>I recently ran into the issue where I had two different classes that needed shared functionality but were un-related. I had a Character object that could be damaged and attack other objects.  I also had a non-skeletal mesh actor (A tower defense tower) that also needed those exact same properties and functions.</p>
+
+<h4 id="what-i-needed">What I Needed</h4>
+
+<div class="code-example">
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">TowerActor</th>
+        <th style="text-align: left">EnemyCharacter</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">onHit()</td>
+        <td style="text-align: left">onHit()</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">int32 health</td>
+        <td style="text-align: left">int32 health</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">onHpZero()</td>
+        <td style="text-align: left">onHpZero()</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">int32 atkDmg</td>
+        <td style="text-align: left">int32 atkDmg</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>I had about 20 properties, functions, and events I needed shared across my Actor and Character.</p>
+
+<p>The problem was I couldn’t modify Unreal’s <code class="highlighter-rouge">ACharacter</code> class to point to a custom <code class="highlighter-rouge">APawn</code> subclass where I might implement that shared functionality. I had to choose to copy and paste the code (bugs) or to hack something together.</p>
+
+<p>So what did I do? I hacked my tower and made it a skeletal mesh, which meant they could both use that code without me having to write it twice.  This had many issues, including some collision properties and other hacks I had to do to use it properly.  It was really bugging me.</p>
+
+<p>Normally, in other languages I would use an Interface or Protocol to solve this problem. C++ doesn’t have the concept of Interfaces.</p>
+
+<h3 id="unreal-uinterface">Unreal UINTERFACE</h3>
+
+<p>Then I found out about <a href="https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Reference/Interfaces/index.html">UINTERFACE</a>.</p>
+
+<p>They got me really close to a model more similar to dependency injection. But they still had the issue of not being able to support properties - ie no variables.</p>
+
+<p>Local UE4 Answers contributor Rama mentioned a way of getting properties with <code class="highlighter-rouge">UINTERFACE</code> using <a href="https://forums.unrealengine.com/development-discussion/c-gameplay-programming/25709-member-variable-declaration-not-allowed-in-interfaces">virtual getter functions</a>.</p>
+
+<p>This was cool, but still felt a little hackery. And I ran into some issues.  But at the end of the day I don’t like using things as they weren’t intended.</p>
+
+<h3 id="unreal-multiple-inheritance">Unreal Multiple Inheritance</h3>
+
+<p>The other option I wanted to try was multiple inheritance. I’m not a fan of it but it could have worked.  I came to find out that Unreal Engine does not support multiple inheritance.  So there was no way I could create a custom Character that inherits from <code class="highlighter-rouge">ACharacter</code> as well as my base actor object.</p>
+
+<h3 id="the-solution-uactorcomponent">The Solution: UActorComponent</h3>
+
+<p>Finally I found the <em>right</em> solution. That is to use <a href="https://api.unrealengine.com/INT/API/Runtime/Engine/Components/UActorComponent/index.html">UActorComponent</a>.</p>
+
+<p><code class="highlighter-rouge">UActorComponent</code> is a great way to achieve clean <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">composition</a> in Unreal design.</p>
+
+<p>From the <a href="https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Actors/Components/index.html#actorcomponents">Unreal docs</a>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Actor Components (class UActorComponent) are most useful for abstract behaviors such as movement,
+inventory or attribute management, and other non-physical concepts. Actor Components do not
+have a transform, meaning they do not have any physical location or rotation in the world.
+</code></pre></div></div>
+<h3 id="easy-steps">Easy Steps</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Created a HealthComponent</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Created a AttackComponent</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add these components to any UObject</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />In Blueprint, grab components and call functions or set values</li>
+</ul>
+
+<p class="label">Just add the components</p>
+
+<div class="code-example">
+  <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AGameCharacter</span><span class="p">::</span><span class="nf">AGameCharacter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">healthComponent</span> <span class="p">=</span> <span class="n">CreateDefaultSubobject</span><span class="p">&lt;</span><span class="n">UHealthComponent</span><span class="p">&gt;(</span><span class="k">this</span><span class="p">,</span> <span class="nf">TEXT</span><span class="p">(</span><span class="s">"HealthComponent"</span><span class="p">));</span>
+  <span class="n">healthComponent</span><span class="p">-&gt;</span><span class="nf">SetupAttachment</span><span class="p">(</span><span class="n">RootComponent</span><span class="p">);</span>
+
+  <span class="n">attackComponent</span> <span class="p">=</span> <span class="n">CreateDefaultSuboject</span><span class="p">&lt;</span><span class="n">UAttackComponent</span><span class="p">&gt;(</span><span class="k">this</span><span class="p">,</span> <span class="nf">TEXT</span><span class="p">(</span><span class="s">"AttackComponent"</span><span class="p">));</span>
+  <span class="n">attackComponent</span><span class="p">-&gt;</span><span class="nf">SetupAttachment</span><span class="p">(</span><span class="n">RootComponent</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+</div>
+
+<div id="disqus_thread"></div>
+<script src="http://localhost:4000/assets/js/disqus.js"></script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
