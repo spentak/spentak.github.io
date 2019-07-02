@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
   
-    <title>C++ - UE4 Tutorials</title>
+    <title>AIController Won't Move Character - UE4 Tutorials</title>
 
     
   
@@ -25,17 +25,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>C++ | UE4 Tutorials</title>
+<title>AIController Won’t Move Character | UE4 Tutorials</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="C++" />
+<meta property="og:title" content="AIController Won’t Move Character" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorials and snippets for UE4" />
 <meta property="og:description" content="Tutorials and snippets for UE4" />
-<link rel="canonical" href="http://localhost:4000/docs/c++" />
-<meta property="og:url" content="http://localhost:4000/docs/c++" />
+<link rel="canonical" href="http://localhost:4000/docs/blueprint/ai-wont-move/" />
+<meta property="og:url" content="http://localhost:4000/docs/blueprint/ai-wont-move/" />
 <meta property="og:site_name" content="UE4 Tutorials" />
 <script type="application/ld+json">
-{"description":"Tutorials and snippets for UE4","@type":"WebPage","url":"http://localhost:4000/docs/c++","headline":"C++","@context":"http://schema.org"}</script>
+{"description":"Tutorials and snippets for UE4","@type":"WebPage","url":"http://localhost:4000/docs/blueprint/ai-wont-move/","headline":"AIController Won’t Move Character","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -73,9 +73,9 @@
     
       
         
-          <li class="navigation-list-item active">
+          <li class="navigation-list-item">
             
-            <a href="http://localhost:4000/docs/c++" class="navigation-list-link active">C++</a>
+            <a href="http://localhost:4000/docs/c++" class="navigation-list-link">C++</a>
             
               
               <ul class="navigation-list-child-list ">
@@ -118,7 +118,7 @@
     
       
         
-          <li class="navigation-list-item">
+          <li class="navigation-list-item active">
             
             <a href="http://localhost:4000/docs/blueprint" class="navigation-list-link">Blueprint</a>
             
@@ -128,9 +128,9 @@
                   
                 
                   
-                    <li class="navigation-list-item ">
+                    <li class="navigation-list-item  active">
                       
-                      <a href="http://localhost:4000/docs/blueprint/ai-wont-move/" class="navigation-list-link">AIController Won't Move Character</a>
+                      <a href="http://localhost:4000/docs/blueprint/ai-wont-move/" class="navigation-list-link active">AIController Won't Move Character</a>
                       
                     </li>
                   
@@ -183,48 +183,51 @@
       <div class="main-content">
         
           
+            <nav class="breadcrumb-nav">
+              <ol class="breadcrumb-nav-list">
+                
+                  <li class="breadcrumb-nav-list-item"><a href="http://localhost:4000/docs/blueprint">Blueprint</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>AIController Won't Move Character</span></li>
+              </ol>
+            </nav>
+          
         
         <div id="main-content" class="page-content" role="main">
-          
+          <h2 id="my-aicontroller-was-working-but-now-it-isnt">My AIController Was Working But Now It Isn’t!</h2>
+
+<p>So this thing keeps happening where I have a character with a custom AIController and he is moving and doing what he is suppose to do.  Then <em>suddenly</em>, out of nowhere, the character stops moving. In fact no AI seems to be working at all.</p>
+
+<p><strong>GRRR</strong></p>
+
+<p>This has probably happened to you and you are now reading this hoping for an answer.  We’ll, I have the solution.</p>
+
+<h2 id="what-probably-happened">What Probably Happened</h2>
+
+<p>What probably happened is you did a lot of your game testing for your AI with Blueprints that you <em>dragged</em> into the viewport.  But then you wrote some code that <em>spawns your AI character at runtime</em>.</p>
+
+<p>By default your AI is set to only work on AI’s that are dragged into the viewport.</p>
+
+<p><img src="/assets/images/spawn.png" alt="" /></p>
+
+<h2 id="the-fix">The Fix</h2>
+<div class="code-example">
+  <ol>
+    <li>Go into your character Blueprint and look at the Class Defaults</li>
+    <li>Under Pawn look for Auto Possess AI</li>
+    <li>Change that from <em>Placed in World</em> to <em>Placed In World Or Spawned</em></li>
+  </ol>
+</div>
+
+<p>That’s it. Now when you spawn your AI or drag it into the viewport it will work.</p>
+
+<div id="disqus_thread"></div>
+<script src="http://localhost:4000/assets/js/disqus.js"></script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-          
-          <hr>
-          <h2 class="text-delta">Table of contents</h2>
-          
-          <ul>
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-              <li>
-                <a href="http://localhost:4000/docs/cpp/cpp-component-wont-load/">C++ component won't show in Blueprints</a>
-              </li>
-              
-            
-              
-              <li>
-                <a href="http://localhost:4000/docs/cpp/sharing-code-between-classes/">Sharing C++ Code Between Classes</a>
-              </li>
-              
-            
-              
-            
-              
-            
-          </ul>
+
           
         </div>
       </div>
